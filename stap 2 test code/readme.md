@@ -1,1 +1,1 @@
-De readme.md vind je in de hoofdmap van deze repo.
+De readme.md vind je in de hoofdmap van deze repo. oke
