@@ -209,22 +209,96 @@ void loop() {
   }
 
   // zet stoplichten conform toestand
-  if (toestand == BORING) {
-    for (int i = 1; i <= 8; i = i + 1) {
-      stoplicht(i, ROOD);
+  if (toestand == EERSTE) {
+    case 1 = ROOD,
+    case 2 = GROEN,
+    case 3 = GROEN,
+    case 4 = ROOD,
+    case 5 = ROOD,
+    case 6 = ROOD,
+    case 7 = ROOD,
+    case 8 = ROOD
     }
   }
-  if (toestand == KAMIKAZE) {
-    for (int i = 1; i <= 8; i = i + 1) {
-      stoplicht(i, GROEN);
-    }
-  }
-  if (toestand == EXCITING) {
-    for (int i = 1; i <= 6; i = i + 1) {
-      stoplicht(i, ORANJE);
+  
+if (toestand == TWEEDE) {
+    case 1 = ROOD,
+    case 2 = ORANJE,
+    case 3 = ORANJE,
+    case 4 = ROOD,
+    case 5 = ROOD,
+    case 6 = ROOD,
+    case 7 = ROOD,
+    case 8 = ROOD
     }
   }
 
+  if (toestand ==  DERDE) {
+    case 1 = GROEN,
+    case 2 = ROOD,
+    case 3 = ROOD,
+    case 4 = ROOD,
+    case 5 = ROOD,
+    case 6 = GROEN,
+    case 7 = ROOD,
+    case 8 = ROOD
+    }
+  }
+  if (toestand == VIERDE) {
+    case 1 = ORANJE,
+    case 2 = ROOD,
+    case 3 = ROOD,
+    case 4 = ROOD,
+    case 5 = ROOD,
+    case 6 = ORANJE,
+    case 7 = ROOD,
+    case 8 = ROOD
+    }
+  }
+  if (toestand == VIJDE) {
+    case 1 = ROOD,
+    case 2 = ROOD,
+    case 3 = ROOD,
+    case 4 = GROEN,
+    case 5 = GROEN,
+    case 6 = ROOD,
+    case 7 = ROOD,
+    case 8 = ROOD
+    }
+  }
+  if (toestand == ZESDE) {
+    case 1 = ROOD,
+    case 2 = ROOD,
+    case 3 = ROOD,
+    case 4 = ORANJE,
+    case 5 = ORANJE,
+    case 6 = ROOD,
+    case 7 = ROOD,
+    case 8 = ROOD
+    }
+  }
+if (toestand == ZEVENDE) {
+    case 1 = ROOD,
+    case 2 = ROOD,
+    case 3 = ROOD,
+    case 4 = ROOD,
+    case 5 = ROOD,
+    case 6 = ROOD,
+    case 7 = GROEN,
+    case 8 = GROEN
+    }
+  }
+if (toestand == ACHSTE) {
+    case 1 = ROOD,
+    case 2 = ROOD,
+    case 3 = ROOD,
+    case 4 = ROOD,
+    case 5 = ROOD,
+    case 6 = ROOD,
+    case 7 = GROEN,
+    case 8 = GROEN
+    }
+  }
   // vertraging om te zorgen dat berichten op de seriele monitor leesbaar blijven
   delay(100);
 }
