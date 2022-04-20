@@ -225,8 +225,49 @@ if (toestand == DERDE) {
  
 
   // zet stoplichten conform toestand
- 
- 
+ if (toestand == EERSTE) {
+  stoplicht(1, ROOD);
+  stoplicht(2, GROEN);
+  stoplicht(3, GROEN);
+  stoplicht(4, ROOD);
+  stoplicht(5, ROOD);
+  stoplicht(6, ROOD);
+  stoplicht(7, ROOD);
+  stoplicht(8, ROOD);
+ ;}
+if (toestand == TWEEDE) {
+  stoplicht(1, ROOD);
+  stoplicht(2, ORANJE);
+  stoplicht(3, ORANJE);
+  stoplicht(4, ROOD);
+  stoplicht(5, ROOD);
+  stoplicht(6, ROOD);
+  stoplicht(7, ROOD);
+  stoplicht(8, ROOD);
+ ;}
+
+if (toestand == DERDE) {
+  stoplicht(1, GROEN);
+  stoplicht(2, ROOD);
+  stoplicht(3, ROOD);
+  stoplicht(4, ROOD);
+  stoplicht(5, ROOD);
+  stoplicht(6, GROEN);
+  stoplicht(7, ROOD);
+  stoplicht(8, ROOD);
+ ;}
+
+if (toestand == VIERDE) {
+  stoplicht(1, ORANJE);
+  stoplicht(2, ROOD);
+  stoplicht(3, ROOD);
+  stoplicht(4, ROOD);
+  stoplicht(5, ROOD);
+  stoplicht(6, ORANJE);
+  stoplicht(7, ROOD);
+  stoplicht(8, ROOD);
+ ;}
+
 
   // vertraging om te zorgen dat berichten op de seriele monitor leesbaar blijven
   delay(100);
