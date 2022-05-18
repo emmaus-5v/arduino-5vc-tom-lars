@@ -32,6 +32,7 @@ const int pin8Wit   = 50; // pin van lamp in knop8 wit
 // variabelen om waarden van sensoren en actuatoren te onthouden
 int knop7 = 0;
 int knop8 = 0;
+int ingedrukt = 0;
 
 // variabelen voor de toestanden
 const int EERSTE = 1; // stoplicht 2 en 3 groen rest rood
@@ -172,8 +173,12 @@ void loop() {
   knop8 = digitalRead(pin8Knop);
 
   // bepaal toestand
+  if (knop7 == HIGH || knop8 == HIGH) {
+      ingedrukt = 1;
+    }
+  
   if (toestand == EERSTE) {
-    if (millis() - toestandStartTijd > 17000) {
+    if (millis() - toestandStartTijd > 15000) {
       toestandStartTijd = millis();
       toestand = TWEEDE;
       Serial.println("Nieuwe toestand: TWEEDE");
@@ -188,7 +193,7 @@ void loop() {
   }
 
 if (toestand == DERDE) {
-    if (millis() - toestandStartTijd > 17000) {
+    if (millis() - toestandStartTijd > 15000) {
       toestandStartTijd = millis();
       toestand = VIERDE;
       Serial.println("Nieuwe toestand: VIERDE");
@@ -197,12 +202,15 @@ if (toestand == DERDE) {
   if (toestand == VIERDE) {
     if (millis() - toestandStartTijd > 5000) {
       toestandStartTijd = millis();
+      if (ingedrukt = 1) {
+        toestand = ZEVENDE;
+      }
       toestand = VIJFDE;
       Serial.println("Nieuwe toestand: VIJFDE");
     }
   }
   if (toestand == VIJFDE) {
-    if (millis() - toestandStartTijd > 17000) {
+    if (millis() - toestandStartTijd > 15000) {
       toestandStartTijd = millis();
       toestand = ZESDE;
       Serial.println("Nieuwe toestand: ZESDE");
@@ -211,18 +219,19 @@ if (toestand == DERDE) {
   if (toestand == ZESDE) {
     if (millis() - toestandStartTijd > 5000) {
       toestandStartTijd = millis();
-      toestand = EERSTE;
+      if (ingedrukt = 1) {
+        toestand = ZEVENDE;
+      }
+      else {toestand = EERSTE;
+      }
       Serial.println("Nieuwe toestand: EERSTE");
     }
   }
 
  
-    if (knop7 == HIGH || knop8 == HIGH) {
-      toestand = ZEVENDE;
-    }
  
  if (toestand == ZEVENDE) {
-    if (millis() - toestandStartTijd > 17000) {
+    if (millis() - toestandStartTijd > 15000) {
       toestandStartTijd = millis();
       toestand = ACHTSTE;
       Serial.println("Nieuwe toestand: ACHTSTE");
